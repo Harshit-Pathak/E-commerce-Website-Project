@@ -12,32 +12,32 @@ Integer total_bill=Integer.parseInt(request.getParameter("total_bill"));
 try
 {
 	Class.forName("com.mysql.jdbc.Driver"); 
-	java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/leofab","root","123456");
-	PreparedStatement ps=con.prepareStatement("select * from order_details where oid=?");
+	java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3308/ecommerce","root","hgmp");
+	PreparedStatement ps=con.prepareStatement("select * from orderdetails where oid=?");
 	ps.setString(1,oid);
 	ResultSet rs=ps.executeQuery();
 			
 	while(rs.next())
 	{
-		String query="update products set qty=qty - "+rs.getInt(3)+" where pid=?";
+		String query="update products set product_quantity=product_quantity - "+rs.getInt(3)+" where product_id=?";
 		PreparedStatement ps1=con.prepareStatement(query);
-		ps1.setInt(1,rs.getInt(2));
+		ps1.setString(1,rs.getString(2));
 		ps1.executeUpdate();
 	}
-	PreparedStatement ps2=con.prepareStatement("update orders set oamt=? where oid=? ");
+	PreparedStatement ps2=con.prepareStatement("update orders set amount=? where oid=? ");
 	ps2.setInt(1,total_bill);
 	ps2.setString(2,oid);
 	ps2.executeUpdate();
 
-	PreparedStatement ps3=con.prepareStatement("update orders set ostatus='confirmed' where oid=?");
+	PreparedStatement ps3=con.prepareStatement("update orders set status='confirmed' where oid=?");
 	ps3.setString(1,oid);
 	ps3.executeUpdate();
 	try
 	{
-		String from = "leofab.india@yahoo.com";
+		String from = "selectgenie@yahoo.com";
 		String to = (String)session.getAttribute("email");
 		String host = "smtp.mail.yahoo.com";
-		String pass="**********";
+		String pass="errorconnect";
 		Properties properties = System.getProperties();
 		properties.put("mail.smtp.starttls.enable", "true");
 		properties.put("mail.smtp.host", host);
@@ -51,8 +51,8 @@ try
 			MimeMessage message = new MimeMessage(session1);
 			message.setFrom(new InternetAddress(from));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-			message.setSubject("Leofab India Order Confirmed");
-			message.setText("Your Order No:"+oid+" has been successfully placed\n The total amount due is:"+total_bill+" which has to be paid in Cash on Delivery\nThe order will be shipped within 4-5 working days\nRegards\nLeofab India");
+			message.setSubject("Select Genie Order Confirmed");
+			message.setText("Your Order No:"+oid+" has been successfully placed\n The total amount due is:"+total_bill+" which has to be paid in Cash on Delivery\nThe order will be shipped within 4-5 working days\nRegards\nSelect Genie");
 			Transport transport = session1.getTransport("smtp");
 			transport.connect(host, from, pass);
 			transport.sendMessage(message, message.getAllRecipients());
@@ -61,7 +61,7 @@ try
 		}
 		catch (Exception mex)
 		{
-			mex.printStackTrace();
+			out.println(mex);
    		}
 	}
 	catch(Exception e)

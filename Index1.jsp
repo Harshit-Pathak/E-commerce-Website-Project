@@ -27,7 +27,7 @@
 
 				%>  
   
-				
+	        
                 <a href="Login page.html" class="button"><b>LOG IN</b></a>
                  <a href="Registration page.html" class="button"><b>SIGN UP</b></a>
               
@@ -37,7 +37,8 @@
 
 				{
 				%>
-                                Welcome!!!&nbsp <%=u%> &nbsp &nbsp<a href=changepassword.jsp>Change Password</a>&nbsp<a href="logout.jsp" class="button">Logout</a>
+                                Welcome!!!&nbsp <%=u%> &nbsp &nbsp<a href="change password.html" class="button">Change Password</a>&nbsp<a href="logout.jsp" class="button">Logout</a>
+                                
 				<%
 				}
 				%>
@@ -103,47 +104,33 @@ function showSlides() {
 		
 			<div class="logo" align="center">
                             <a href="Index1.jsp"><img src="final_select (1).png"></a>
-			</div><br/><br><br>
+			</div><br/><br>
                         
 		<div class="list">	
             <ul>
                   <li><a href="About.jsp"><b>ABOUT</b></a></li>
-                  <li><a href="#cart"><img src="ecommerce.png" height="15" width="18">&nbsp <b>MY CART</b></a></li>
-                  <li><a href="#mens"><b>MENS</b></a>
+                  
+                  <li><a href="#"><b>CLOTHING</b></a>
+                      
                  <ul>
-                 <li><a href="Casuals.jsp">Casuals</a></li>
-                 <li><a href="Formals.jsp">Formals</a></li>
-                 <li><a href="Traditional.jsp">Traditional</a></li>
-                
+                 <li><a href="view_products.jsp?p_category=Mens&pageno=1">MENS</a></li>
+                 <li><a href="view_products.jsp?p_category=Womens&pageno=1"><b>WOMENS</b></a>
                  </ul>
+                      <li><a href="view_cart.jsp"><img src="ecommerce.png" height="15" width="18">&nbsp <b>MY CART</b></a></li>
                  </li>
                  
-                       
-                  <li><a href="#women"><b>WOMENS</b></a>
-                   <ul>
-                 <li><a href="women casuals.jsp">Casuals</a></li>
-                 <li><a href="women formals.jsp">Formals</a></li>
-                 <li><a href="women traditional.jsp">Traditional</a></li>
-                 </ul>
-                 </li>
                   
                    
-                  <li><a href="#electronics"><b>ELECTRONICS</b></a>
-                  		<ul>
-                             <li><a href="Mobiles.jsp">Mobiles</a></li>
-                             <li><a href="Laptops.jsp">Laptops</a></li>
-                             <li><a href="Smartwatches.jsp">Smart Watches</a></li>
-                        </ul>
-                        </li>
-                    
-                  <li><a href="Home Appliances.jsp"><b>HOME APPLIANCES</b></a>
+                  <li><a href="view_products.jsp?p_category=Electronics&pageno=1"><b>ELECTRONICS</b></a>
+                  		
+                  <li><a href="view_products.jsp?p_category=Home Appliances&pageno=1"><b>HOME APPLIANCES</b></a>
                  
                  </li>
-                   <li><a href="Furnitures.jsp"><b>FURNITURES</b></a>
+                   <li><a href="view_products.jsp?p_category=Furnitures&pageno=1"><b>FURNITURES</b></a>
                  
                  </li>
                   
-                  <li><a href="Feedback.html" target="new"><b>FEEDBACK</b></a></li>&nbsp&nbsp;
+                  <li><a href="feedback input.jsp" target="new"><b>FEEDBACK</b></a></li>&nbsp&nbsp;
                   
                   
 				
@@ -155,11 +142,11 @@ function showSlides() {
 		</ul>
 		</div>
         
-        
-        <marquee direction="up" scrollamount="2" height="200"><p align="center"><font color="#23C0DC" face="Arial"><b>WELCOME TO SELECT GENIE YOU ARE CURRENTLY ON ONE OF THE LEADING E-COMMERCE SITE. IF YOU WANT QUALITY PRODUCTS AT A POCKET FRIENDLY PRICE THEN YOU  ARE AT THE RIGHT PLACE.<br></b>
+        <div class="welcome">
+                        <marquee direction="up" scrollamount="2" height="140"><p align="center"><font face="Arial"><b>WELCOME TO SELECT GENIE YOU ARE CURRENTLY ON ONE OF THE LEADING E-COMMERCE SITE. IF YOU WANT QUALITY PRODUCTS AT A POCKET FRIENDLY PRICE THEN YOU  ARE AT THE RIGHT PLACE.<br></b>
         <b>HERE YOU HAVE FREEDOM TO CHOOSE FROM A VARIETY OF PRODUCTS ACCORDING TO WHAT SUITS YOUR NEEDS THE BEST IN A VERY HASSLE FREE WAY<br>SO WISH YOU ALL A HAPPY SHOPPING.........</b></font></p></marquee> 
                  <br><br><br><br><br><br><br>       
-        
+        </div>
         <div class="social">
         	<div class="container" align="center">
                     <div class="icon"><br><br>
@@ -169,7 +156,7 @@ function showSlides() {
                     <a href="https://www.googleplus.com" target="new"><img src="gplus.png" height="40" width="40"></a>
                     
                     <br><br>
-                    <img src="contact.png" height="30" width="30">&nbsp&nbsp<font face="Century Gothic" color="#FFFFFF"><b>8169482600 / 02224472560</b></font>&nbsp&nbsp
+                    <img src="contact.png" height="30" width="30">&nbsp&nbsp<font face="Century Gothic" color="#FFFFFF"><b>8169482600 / 02224472560</b></font>&nbsp&nbsp&nbsp
                     <img src="location.png" height="30" width="30"><font face="Century Gothic" color="#FFFFFF"><b>Mumbai Bhiwandi Warehouse</b></font><br><br>
                     <font face="Century Gothic" color="#FFFFFF"><b>All Rights Reserved 2018 &nbsp @Tech Harsh</b></font>
                 </div></div></div>

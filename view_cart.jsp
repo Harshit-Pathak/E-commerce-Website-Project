@@ -7,10 +7,8 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Message</title>
-<link href="confirm msg design.css" rel="stylesheet" type="text/css"/>
-
-
+<title>View Cart</title>
+<link href="view cart design.css" rel="stylesheet" type="text/css"/>
 <script src="ism-2.1.js"></script>
 
 
@@ -92,42 +90,31 @@
         
     
    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+<body>
+<table width="100%" align="center" bgcolor="#E5E7DE" class="main_table" cellpadding="0" cellspacing="0" border="0" valign="middle" style="background-image: url('back.jpg');background-repeat:no-repeat;background-attachment:fixed;background-size: 100%;">
+
+  
+
 
 
 <tr height=400>
 <td colspan="3" align="right">
 
-    <center>  <align="center"><br></br>
-<h3 style="color:white">Order Placed Successfully</h3>
-<%
-
-String oid=(String)session.getAttribute("oid");
-
-%>
-
-<h3 style="color:white">Order Id:<%=oid%></h3>
-
-<table border=1 width="1000" cellspacing=5 style="color:white">
+<center>  <align="center">
+<h3 style="color:black">Cart</h3>
+<table border=1 width="1000" cellspacing=5 style="color:black">
 <tr align=left>
 <th>Product Id</th>
 <th>Product Name</th>
 <th>Price</th>
 <th>Quantity</th>
 <th>Total</th>
+<th>Remove</th>
 </tr>
 <%
-session.setAttribute("oid",null);
+
+String oid=(String)session.getAttribute("oid");
 
 int total_bill=0;
 try
@@ -148,6 +135,7 @@ try
 		<td><%=rs.getString(3)%></td>
 		<td><%=rs.getString(4)%></td>
 		<td><%=rs.getString(5)%></td>
+		<td><form action=removefromcart.jsp ><input type=hidden name=p_id value=<%=rs.getString(1)%>><input type=hidden name=oid value=<%=oid%>><input type=submit value="Remove" class=btn></form></td>
 		</tr>
 
 <%
@@ -161,12 +149,12 @@ catch (Exception e)
 %>
 <tr>
 <td align=left colspan=5>Total</td>
-<td><%=total_bill%></td>
+<td colspan=2><%=total_bill%></td>
 </tr>
 <tr>
-<td align=center colspan=6><form>
-<button value="Print this page" onClick="window.print()"><img src="images/printbutton.png"></button>
-</form></td>
+
+<tr>
+<td align="center" colspan=7><form action=confirm_order.jsp method="post"><input type=hidden name=oid value=<%=oid%>><input type=hidden name=total_bill value=<%=total_bill%>><input type=submit value="Confirm Order" class=btn></form></td>
 </tr>
 </table>
 </center>
@@ -178,10 +166,23 @@ catch (Exception e)
 <tr>
 
 <td colspan="3" align="center">&nbsp;<BR>
-<font face="Tahoma, Geneva, sans-serif" size="2" color="#FFFFFF">Copyright &copy; All Rights Reserved. Select Genie 2018 </font>
+<font face="Tahoma, Geneva, sans-serif" size="2" color="#000000">Copyright &copy; All Rights Reserved. Select Genie 2018 </font>
 </td></tr>
 </table>
-
+<div class="social">
+        	<div class="container" align="center">
+                    <div class="icon"><br><br>
+                	&nbsp&nbsp<a href="https://www.facebook.com" target="new"><img src="fb.png" height="35" width="40"></a>&nbsp&nbsp&nbsp
+                    <a href="https://www.twitter.com" target="new"><img src="twitter.png" height="40" width="40"></a>&nbsp&nbsp&nbsp
+                    <a href="https://www.instagram.com" target="new"><img src="Instagram-logo.png" height="40" width="40"></a>&nbsp&nbsp&nbsp
+                    <a href="https://www.googleplus.com" target="new"><img src="gplus.png" height="40" width="40"></a>
+                    
+                    <br><br>
+                    <img src="contact.png" height="30" width="30">&nbsp&nbsp<font face="Century Gothic" color="#FFFFFF"><b>8169482600 / 02224472560</b></font>&nbsp&nbsp&nbsp
+                    <img src="location.png" height="30" width="30"><font face="Century Gothic" color="#FFFFFF"><b>Mumbai Bhiwandi Warehouse</b></font><br><br>
+                    <font face="Century Gothic" color="#FFFFFF"><b>All Rights Reserved 2018 &nbsp @Tech Harsh</b></font>
+                </div></div></div>
+        
 
 </body>
 </html>

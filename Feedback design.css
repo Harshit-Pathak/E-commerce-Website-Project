@@ -1,0 +1,105 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+header
+{
+	background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(pic4.jpg);
+	height: 150vh;
+	background-size: cover;
+	background-position: center;
+}
+
+.logo
+{
+	width:150px;
+	height:auto;	
+	float:left;
+}
+body
+{
+	font-family: monospace;
+	
+}
+.Feedback
+{
+	width:350px;
+	height:600px;
+	background: rgba(0,0,0,0.5);
+	color:#fff;
+	top:50%;
+	left:50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	
+}
+h1{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 30px;
+}
+.Feedback p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-family: "Roboto",sans-serif;
+	font-size: 15px;
+	
+}
+.Feedback input{
+	width:100%;
+	margin-bottom: 20px;
+}
+.Feedback input[type="text"],input[type="email"],input[type="tel"]{
+	border:none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height:40px;
+	color:#fff;
+	font-size: 16px;
+}
+.Feedback input[type="submit"]
+{
+	border:none;
+	outline:none;
+	height:40px;
+	background: #000000;
+	color:#fff;
+	font-size: 18px;
+	border-radius: 20px;
+}
+.Feedback input[type="submit"]:hover
+{
+	cursor:pointer;
+	background: #12A32C;
+}
+
+.main-nav
+{
+	float: right;
+	list-style: none;
+	margin-top: 30px;	
+}
+.main-nav li
+{
+	display: inline-block;
+}
+.main-nav li a
+{
+	color: white;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: "Roboto",sans-serif;
+	font-size: 15px;
+	
+}
+.main-nav li a:hover
+{
+	border: 1px solid white;
+}
